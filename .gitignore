@@ -85,4 +85,4 @@ fabric.properties
 .gitignore
 .idea/
 node-modules/
-
+public/
