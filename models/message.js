@@ -7,8 +7,9 @@ var schema = new Schema({
 });
 
 schema.post('remove', function (message) {
+    var deletedMessage = message;
     User.findById(message.user, function (err, user) {
-        user.messages.pull(message);
+        user.messages.pull(deletedMessage._id);
         user.save();
     })
 })
