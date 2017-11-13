@@ -36,7 +36,7 @@ router.use('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
-    User.findById(decoded.user._id, function (err, user) {
+    User.findById(decoded.user._id, function (err, doc) {
         if(err){
             return res.status(500).json({
                 title: 'An error occurred',
@@ -45,7 +45,7 @@ router.post('/', function (req, res, next) {
         }
         var message = new Message({
             content: req.body.content,
-            user: user
+            user: doc._id
         });
         message.save(function(err, result){
             if(err){
@@ -54,11 +54,12 @@ router.post('/', function (req, res, next) {
                     error: err
                 });
             }
-            user.messages.push(result);
-            user.save();
+            doc.messages.push(result);
+            doc.save();
             res.status(201).json({
                 message: 'Message saved',
-                obj: result
+                obj: result,
+                username: doc.firstName
             });
         });
     })
