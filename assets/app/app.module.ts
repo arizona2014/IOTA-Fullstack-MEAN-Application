@@ -16,20 +16,24 @@ import { HttpModule } from "@angular/http";
 import { AuthService } from "./auth/auth.service";
 import { ErrorComponent } from "./errors/error.component";
 import { ErrorService } from "./errors/error.service";
+import {VideoComponent} from "./videos/video.component";
+import {VideosComponent} from "./videos/videos.component";
+import {VideoListComponent} from "./videos/video-list.component";
+import {VideoInputComponent} from "./videos/video-input.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        MessageComponent,
-        MessageListComponent,
-        MessageInputComponent,
-        MessagesComponent,
         AuthenticationComponent,
         HeaderComponent,
         LogoutComponent,
         SigninComponent,
         SignupComponent,
-        ErrorComponent
+        ErrorComponent,
+        VideoComponent,
+        VideosComponent,
+        VideoListComponent,
+        VideoInputComponent
     ],
     imports: [
         BrowserModule,
@@ -44,6 +48,4 @@ import { ErrorService } from "./errors/error.service";
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }
