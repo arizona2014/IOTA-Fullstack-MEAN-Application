@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { Message } from "./message.model";
 import { MessageService } from "./messages.service";
 
-
 @Component({
     selector: 'app-message-list',
     template: `
