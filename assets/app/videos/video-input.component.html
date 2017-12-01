@@ -1,0 +1,20 @@
+<div class="col-md-8 col-md-offset-2">
+    <form (ngSubmit)='onSubmit(f)' #f="ngForm" >
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input
+                    type="text"
+                    id="content"
+                    class="form-control"
+                    [ngModel]="video?.content"
+                    name="content"
+                    required
+            />
+        </div>
+        <label for="link">Link</label>
+        <input type="text" id="link" class="form-control" [ngModel]="video.link" name="link" />
+        <br>
+        <button  class="button btn btn-danger" type="button" (click)="onClear(f)">Clear</button >
+        <button  class="button btn btn-primary" type="submit">Save</button >
+    </form>
+</div>
