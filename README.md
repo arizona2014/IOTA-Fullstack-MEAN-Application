@@ -5,3 +5,5 @@ I created a fullstack MEAN application as an example for other users who want to
 npm install should be enough to install app's dependencies 
 
 For running the application you should have MongoDB service opened, NodeJS server started - npm run build, and the Angular application launched - npm start.
+
+You should see app running at http://localhost:3000/
