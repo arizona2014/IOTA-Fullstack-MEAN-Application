@@ -1,6 +1,6 @@
-import {Component, Input} from "@angular/core";
-import {Message} from "./message.model";
-import {VideoService} from "./video.service";
+import { Component, Input } from "@angular/core";
+import { Video } from "./video.model";
+import { VideoService } from "./video.service";
 
 @Component({
     selector: 'app-video',
@@ -22,23 +22,27 @@ import {VideoService} from "./video.service";
 })
 export class VideoComponent {
 
-    @Input() video: Message;
+    @Input() video: Video;
 
-    constructor(private messageService: MessageService){ }
+    constructor(private videoService: VideoService){ }
 
     onEdit(){
-        this.messageService.editMessage(this.message);
+        this.videoService.editVideo(this.video);
     }
 
     onDelete(){
-        this.messageService.deleteMessage(this.message)
+        this.videoService.deleteVideo(this.video)
             .subscribe(
                 result => console.log(result)
             );
     }
 
     belongsToUser(){
-        return localStorage.getItem('userId') == this.message.userId;
+        if(this.video){
+            return localStorage.getItem('userId') == this.video.userId;
+        } else {
+            return false;
+        }
     }
 
 }
