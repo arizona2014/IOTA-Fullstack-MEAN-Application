@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Video = require('../../../../../../Users/Arizona/Desktop/iota/models/video');
-var User = require('../../../../../../Users/Arizona/Desktop/iota/models/user');
+var Video = require('../models/video');
+var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 
 
