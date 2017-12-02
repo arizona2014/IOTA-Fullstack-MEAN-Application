@@ -1,4 +1,4 @@
-import { Video } from '../../../../../../../../Users/Arizona/Desktop/iota/assets/app/videos/video.model';
+import { Video } from './video.model';
 import { Http, Response, Headers } from "@angular/http";
 import { Injectable, EventEmitter } from "@angular/core";
 import 'rxjs/Rx';
