@@ -43,8 +43,10 @@ router.post('/', function (req, res, next) {
                 error: err
             });
         }
+        console.log(req.body);
         var video = new Video({
             content: req.body.content,
+            link: req.body.link,
             user: doc._id
         });
         video.save(function(err, result){
