@@ -21,7 +21,7 @@ export class VideoService {
         return this.http.post('http://localhost:3000/video' + token, body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
-                const video = new Video(result.obj.content, result.link, result.obj._id, result.obj.user );
+                const video = new Video(result.obj.content, result.obj.link, result.obj._id, result.obj.user );
                 this.videos.push(video);
                 return video;
             })
@@ -34,7 +34,7 @@ export class VideoService {
                 const videos = response.json().obj;
                 let transformedVideos: Video[] = [];
                 for (let video of videos){
-                    transformedVideos.push(new Video(video.content, video.user.firstName, video._id,  video.user._id));
+                    transformedVideos.push(new Video(video.content, video.link, video._id,  video.user._id));
                 }
                 this.videos = transformedVideos;
                 return transformedVideos;
