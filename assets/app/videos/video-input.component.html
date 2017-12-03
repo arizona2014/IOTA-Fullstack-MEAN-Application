@@ -11,8 +11,17 @@
                     required
             />
         </div>
-        <label for="link">Link</label>
-        <input type="text" id="link" class="form-control" [ngModel]="video.link" name="link" />
+        <div class="form-group">
+            <label for="link">Link</label>
+            <input
+                    type="text"
+                    id="link"
+                    class="form-control"
+                    [ngModel]="video?.link"
+                    name="link"
+                    required
+            />
+        </div>
         <br>
         <button  class="button btn btn-danger" type="button" (click)="onClear(f)">Clear</button >
         <button  class="button btn btn-primary" type="submit">Save</button >
