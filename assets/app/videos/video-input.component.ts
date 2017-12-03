@@ -3,6 +3,7 @@ import {MessageService} from "./messages.service";
 import {NgForm} from "@angular/forms";
 import {Message} from "./message.model";
 import {VideoService} from "./video.service";
+import {Video} from "./video.model";
 
 @Component({
     selector: 'app-video-input',
@@ -11,7 +12,7 @@ import {VideoService} from "./video.service";
 
 export class VideoInputComponent implements OnInit {
 
-    video: Video;
+    public video: any;
 
     constructor (private videoService: VideoService){ }
 
@@ -31,7 +32,7 @@ export class VideoInputComponent implements OnInit {
 
             this.video = null;
         } else {
-            const video = new Video(form.value.content,'Andy', 'http://www.google.com');
+            const video = new Video(form.value.content, form.value.link);
             this.videoService.addVideo(video)
                 .subscribe(
                     data => console.log(data),
