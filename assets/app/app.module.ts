@@ -20,6 +20,7 @@ import {VideoComponent} from "./videos/video.component";
 import {VideosComponent} from "./videos/videos.component";
 import {VideoListComponent} from "./videos/video-list.component";
 import {VideoInputComponent} from "./videos/video-input.component";
+import {CanActivateRoutes} from "./can-activate-routes";
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import {VideoInputComponent} from "./videos/video-input.component";
     ],
     providers: [
         AuthService,
-        ErrorService
+        ErrorService,
+        CanActivateRoutes
     ],
     bootstrap: [AppComponent]
 })
