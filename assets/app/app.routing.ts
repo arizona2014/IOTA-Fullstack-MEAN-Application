@@ -2,7 +2,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthenticationComponent } from "./auth/authentication.component";
 import { AUTH_ROUTES } from "./auth/auth.routes";
 import { VideosComponent } from "./videos/videos.component";
-import {CanActivateRoutes} from "./can-activate-routes";
+import { AuthenticatedCanActivateRoutes } from "./authenticated.CanActivate";
+import { PlayerComponent } from "./player/player.component";
+import { PayedCanActivateRoutes } from "./payed.CanActivate";
 
 const APP_ROUTES: Routes = [
     {
@@ -13,12 +15,17 @@ const APP_ROUTES: Routes = [
     {
         path: 'videos',
         component: VideosComponent,
-        canActivate: [CanActivateRoutes]
+        canActivate: [AuthenticatedCanActivateRoutes]
     },
     {
         path: 'auth',
         component: AuthenticationComponent,
         children: AUTH_ROUTES
+    },
+    {
+        path: 'player',
+        component: PlayerComponent,
+        canActivate: [AuthenticatedCanActivateRoutes, PayedCanActivateRoutes]
     }
 ];
 
