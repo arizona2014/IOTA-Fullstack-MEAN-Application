@@ -40,4 +40,9 @@ export class AuthService {
         return localStorage.getItem('token') !== null;
     }
 
+    hasPayed(){
+        let hasPayed = localStorage.getItem('hasPayed');
+        return hasPayed;
+    }
+
 }
