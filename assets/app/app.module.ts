@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from "./app.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MessageComponent } from "./messages/message.component";
-import { MessageListComponent } from "./messages/message-list.component";
-import { MessageInputComponent } from "./messages/message-input.component";
-import { MessagesComponent } from "./messages/messages.component";
 import { AuthenticationComponent } from "./auth/authentication.component";
 import { HeaderComponent } from "./header.component";
 import { routing } from "./app.routing";
@@ -16,11 +12,13 @@ import { HttpModule } from "@angular/http";
 import { AuthService } from "./auth/auth.service";
 import { ErrorComponent } from "./errors/error.component";
 import { ErrorService } from "./errors/error.service";
-import {VideoComponent} from "./videos/video.component";
-import {VideosComponent} from "./videos/videos.component";
-import {VideoListComponent} from "./videos/video-list.component";
-import {VideoInputComponent} from "./videos/video-input.component";
-import {CanActivateRoutes} from "./can-activate-routes";
+import { VideoComponent } from "./videos/video.component";
+import { VideosComponent } from "./videos/videos.component";
+import { VideoListComponent } from "./videos/video-list.component";
+import { VideoInputComponent } from "./videos/video-input.component";
+import { AuthenticatedCanActivateRoutes } from "./authenticated.CanActivate";
+import { PlayerComponent } from "./player/player.component";
+import { PayedCanActivateRoutes } from "./payed.CanActivate";
 
 @NgModule({
     declarations: [
@@ -34,7 +32,8 @@ import {CanActivateRoutes} from "./can-activate-routes";
         VideoComponent,
         VideosComponent,
         VideoListComponent,
-        VideoInputComponent
+        VideoInputComponent,
+        PlayerComponent
     ],
     imports: [
         BrowserModule,
@@ -46,7 +45,8 @@ import {CanActivateRoutes} from "./can-activate-routes";
     providers: [
         AuthService,
         ErrorService,
-        CanActivateRoutes
+        AuthenticatedCanActivateRoutes,
+        PayedCanActivateRoutes
     ],
     bootstrap: [AppComponent]
 })
