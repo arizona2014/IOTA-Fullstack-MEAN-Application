@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {VideoService} from "./videos/video.service";
+import { VideoService } from "./videos/video.service";
 
 @Component({
     selector: 'my-app',
