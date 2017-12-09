@@ -19,6 +19,7 @@ export class SigninComponent {
                 ( data ) => {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userId', data.userId);
+                    localStorage.setItem('hasPayed', data.hasPayed);
                     this.router.navigateByUrl('/');
 
                 },
