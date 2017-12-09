@@ -5,12 +5,13 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 router.post('/', function (req, res, next) {
-    console.log(req.body);
+
     var user = new User({
        firstName: req.body.firstName,
        lastName: req.body.lastName,
        password: bcrypt.hashSync(req.body.password, 10),
        email: req.body.email,
+       hasPayed: "false"
     });
     user.save(function(err, result) {
         if(err){
@@ -50,6 +51,7 @@ router.post('/signin', function (req, res, next) {
         res.status(200).json({
             message: 'Successfully logged in',
             token: token,
+            hasPayed: user.hasPayed,
             userId: user._id
         })
     })
