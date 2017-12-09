@@ -7,6 +7,7 @@ var schema = new Schema({
     lastName: {type: String, required: true },
     password: {type: String, required: true },
     email: {type: String, required: true, unique:true},
+    hasPayed: {type: String, required: true },
     videos: [{type: Schema.Types.ObjectId, ref: 'Video' }]
 });
 
