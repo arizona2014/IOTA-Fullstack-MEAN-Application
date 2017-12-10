@@ -1,6 +1,6 @@
 var request = require("request");
 var base_url = "http://localhost:3000/";
-var message_url = "http://localhost:3000/message/1";
+var videos_url = "http://localhost:3000/videos/1";
 var json_url = "http://localhost:3000/json";
 var messageBody = '1';
 var jsonBody = '{"first_name":"andy","last_name":"lisac"}';
