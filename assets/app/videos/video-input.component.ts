@@ -1,7 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {MessageService} from "./messages.service";
 import {NgForm} from "@angular/forms";
-import {Message} from "./message.model";
 import {VideoService} from "./video.service";
 import {Video} from "./video.model";
 
