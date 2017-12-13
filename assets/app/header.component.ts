@@ -6,6 +6,7 @@ import {Component} from "@angular/core";
             <nav class="col-md-8 col-md-offset-2">
                 <ul class="nav nav-pills">
                     <li routerLinkActive="active"><a [routerLink]="['/videos']">Videos</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="['/payment']">Payment</a></li>
                     <li routerLinkActive="active"><a [routerLink]="['/auth']">Login/Register</a></li>
                 </ul>    
             </nav>
