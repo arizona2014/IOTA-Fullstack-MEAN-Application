@@ -26,6 +26,11 @@ const APP_ROUTES: Routes = [
         path: 'player',
         component: PlayerComponent,
         canActivate: [AuthenticatedCanActivateRoutes, PayedCanActivateRoutes]
+    },
+    {
+        path: 'payment',
+        component: PaymentComponent,
+        canActivate: [AuthenticatedCanActivateRoutes]
     }
 ];
 
