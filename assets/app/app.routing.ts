@@ -5,6 +5,7 @@ import { VideosComponent } from "./videos/videos.component";
 import { AuthenticatedCanActivateRoutes } from "./authenticated.CanActivate";
 import { PlayerComponent } from "./player/player.component";
 import { PayedCanActivateRoutes } from "./payed.CanActivate";
+import { PaymentComponent } from "./payment/payment.component";
 
 const APP_ROUTES: Routes = [
     {
