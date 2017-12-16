@@ -57,4 +57,14 @@ router.post('/signin', function (req, res, next) {
     })
 });
 
+router.post('/pay', function(req, res, next){
+
+    console.log(req);
+    res.status(200).json({
+        title: 'OK',
+        error: { message: 'KO'}
+    });
+
+});
+
 module.exports = router;
