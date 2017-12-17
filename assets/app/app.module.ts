@@ -19,6 +19,7 @@ import { VideoInputComponent } from "./videos/video-input.component";
 import { AuthenticatedCanActivateRoutes } from "./authenticated.CanActivate";
 import { PlayerComponent } from "./player/player.component";
 import { PayedCanActivateRoutes } from "./payed.CanActivate";
+import {PaymentComponent} from "./payment/payment.component";
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { PayedCanActivateRoutes } from "./payed.CanActivate";
         VideosComponent,
         VideoListComponent,
         VideoInputComponent,
-        PlayerComponent
+        PlayerComponent,
+        PaymentComponent
     ],
     imports: [
         BrowserModule,
