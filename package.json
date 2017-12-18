@@ -32,6 +32,7 @@
     "mongoose": "^4.11.4",
     "mongoose-unique-validator": "^1.0.5",
     "morgan": "~1.6.1",
+    "payiota": "^1.0.5",
     "reflect-metadata": "^0.1.3",
     "request": "^2.81.0",
     "rxjs": "^5.2.0",
