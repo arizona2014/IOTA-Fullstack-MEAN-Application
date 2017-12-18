@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
+var payiota = require('payiota');
 
 router.post('/', function (req, res, next) {
 
