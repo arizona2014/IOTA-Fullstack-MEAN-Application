@@ -87,3 +87,5 @@ fabric.properties
 node-modules/
 /public/
 /public/js/app/bundle.js
+config.js
+/config.js
