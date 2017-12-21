@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
-var payiota = require('payiota');
+var PayiotaAPI  = require('payiota');
 var config = require('../config');
 
 router.post('/', function (req, res, next) {
@@ -61,7 +61,25 @@ router.post('/signin', function (req, res, next) {
 
 router.post('/pay', function(req, res, next){
 
-    console.log(req);
+    const payiota = new PayiotaAPI(config.payiota_key);
+
+    payiota.buy({
+            // You will have to take care
+            // of encrypting this on your side
+            // if you are concerned about security
+
+            // Buy $42
+            price: 42,
+            custom: "some metadata",
+
+    })
+    .then(res => {
+        console.log("transaction created", res)
+    })
+    .catch(err => {
+        console.error(err)
+    });
+
     res.status(200).json({
         title: 'OK',
         error: { message: 'KO'}
