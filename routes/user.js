@@ -64,11 +64,7 @@ router.post('/pay', function(req, res, next){
     const payiota = new PayiotaAPI(config.payiota_key);
 
     payiota.buy({
-            // You will have to take care
-            // of encrypting this on your side
-            // if you are concerned about security
 
-            // Buy $42
             price: 42,
             custom: "some metadata",
 
